@@ -1,13 +1,18 @@
-import Abstract.Phone;
-import Abstract.StorageProvider;
+package phones;
 
-public class IPhone extends Phone {
+import messages.Message;
+import messages.MessageProtocol;
+import storageproviders.StorageProvider;
+
+public class IPhone extends Phone implements MessageProtocol {
 
     public IPhone(){
         super();
     }
 
-
+    public IPhone(StorageProvider storage) {
+        super(storage);
+    }
 
     @Override
     public StorageProvider getStorage() {
@@ -22,5 +27,17 @@ public class IPhone extends Phone {
     @Override
     public void viewAllMessages() {
         super.viewAllMessages();
+    }
+
+
+
+    public boolean send(Message message) {
+
+        return getStorage().save(message);
+    }
+
+    public boolean receive(Message message) {
+
+        return getStorage().retrieveAll().add(message);
     }
 }

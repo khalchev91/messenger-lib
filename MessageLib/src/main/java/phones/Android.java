@@ -1,7 +1,10 @@
-import Abstract.Phone;
-import Abstract.StorageProvider;
+package phones;
 
-public class Android extends Phone {
+import messages.Message;
+import messages.MessageProtocol;
+import storageproviders.StorageProvider;
+
+public class Android extends Phone implements MessageProtocol {
 
     public Android() {
         super();
@@ -24,5 +27,16 @@ public class Android extends Phone {
     @Override
     public void viewAllMessages() {
         super.viewAllMessages();
+    }
+
+
+    public boolean send(Message message) {
+
+        return getStorage().save(message);
+    }
+
+    public boolean receive(Message message) {
+
+        return getStorage().retrieveAll().add(message);
     }
 }
