@@ -1,6 +1,7 @@
-package messages;
+package storageproviders;
 
-import Abstract.StorageProvider;
+import messages.Message;
+import storageproviders.StorageProvider;
 
 import java.util.List;
 

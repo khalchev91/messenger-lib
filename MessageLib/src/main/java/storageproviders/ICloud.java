@@ -1,4 +1,4 @@
-package messages;
+package storageproviders;
 
-public class ICloud {
+public class ICloud extends StorageProvider{
 }

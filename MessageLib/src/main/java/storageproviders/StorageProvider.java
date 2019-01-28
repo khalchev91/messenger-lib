@@ -1,12 +1,17 @@
-package Abstract;
+package storageproviders;
 
 import messages.Message;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class StorageProvider {
 
-    public List<Message> messages;
+    private List<Message> messages;
+
+    public StorageProvider(){
+        messages = new ArrayList<Message>();
+    }
 
     public List<Message> getMessages() {
         return messages;
@@ -17,7 +22,7 @@ public abstract class StorageProvider {
     }
 
     public boolean save(Message message){
-        return false;
+        return messages.add(message);
     }
 
     public List<Message> retrieveAll(){
