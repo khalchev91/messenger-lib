@@ -1,6 +1,6 @@
-package Interfaces;
+package messages;
 
-import Abstract.Message;
+import messages.Message;
 
 public interface MessageProtocol {
 

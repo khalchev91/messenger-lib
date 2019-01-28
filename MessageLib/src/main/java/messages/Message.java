@@ -1,7 +1,11 @@
-package Abstract;
+package messages;
 
 public abstract class Message {
-    public String data;
+    private String data;
+
+    public Message(String data){
+        this.data = data;
+    }
 
     public String getData() {
         return data;
